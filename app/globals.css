@@ -1,0 +1,153 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+/* CSS variables: храните в RGB без альфы для удобного использования в Tailwind */
+:root {
+  /* brand colors (store as R G B) */
+  --color-primary: 72 98 132;       /* #486284 */
+  --color-secondary: 0 0 0;       /* black */
+  --color-gray: 174 174 178;
+  --color-accent: 234 88 12;
+  --color-background: 255 255 255;   /* very light */
+  --color-surface: 255 255 255;
+  --color-muted: 107 114 128;
+  --color-on-primary: 255 255 255;   /* text on primary */
+  --color-border: 226 232 240;
+
+  /* layout tokens */
+  --radius-base: 10px;
+  --shadow-soft: 0 6px 24px rgba(15, 23, 42, 0.06);
+
+  /* nav heights */
+  --nav-height-mobile: 56px;
+  --nav-height-bottom-mobile: 64px;
+  --nav-height-desktop: 72px;
+}
+
+/* HERO FOREGROUND MASK (RESPONSIVE)*/
+
+/* Desktop (default) */
+.foreground-mask {
+  clip-path: polygon(
+    0% 0%,
+    55% 0%,
+    55% 10%,
+    52% 22%,
+    49% 35%,
+    46% 48%,
+    43% 62%,
+    40% 78%,
+    36% 90%,
+    0% 100%
+  );
+}
+
+@layer components {
+  .card {
+    background-color: rgb(var(--color-surface));
+    border-radius: 30px;
+    height: 456px;
+    width: 388px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .foreground-mask {
+    clip-path: polygon(
+      0% 0%,
+      60% 0%,
+      60% 8%,
+      57% 20%,
+      53% 36%,
+      50% 52%,
+      46% 70%,
+      40% 86%,
+      0% 100%
+    );
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .foreground-mask {
+    clip-path: polygon(
+      0% 0%,
+      72% 0%,
+      72% 10%,
+      68% 24%,
+      64% 40%,
+      60% 56%,
+      56% 72%,
+      50% 88%,
+      0% 100%
+    );
+  }
+
+  /* Коррекция большого текста Sabum на мобилке */
+  .hero-title {
+    right: 8px !important;
+    font-size: clamp(64px, 22vw, 220px) !important;
+    line-height: 0.9 !important;
+  }
+}
+
+
+/* Dark theme example switched by .dark on <html> or <body> */
+.dark {
+  --color-background: 8 10 12;
+  --color-surface: 12 14 16;
+  --color-muted: 148 163 184;
+  --color-border: 34 41 56;
+}
+
+/* Base body */
+html, body {
+  height: 100%;
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-muted));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+}
+
+/* Utility: use smoother transforms for animations */
+.animate-smooth {
+  transition: transform 180ms cubic-bezier(.2,.9,.2,1), opacity 150ms ease;
+}
+
+/* Skip to content (accessibility) */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  z-index: 9999;
+  background: rgb(var(--color-surface));
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  box-shadow: var(--shadow-soft);
+}
+
+.white-icon {
+  filter: brightness(0) saturate(100%) invert(100%);
+}
+
+.active-icon {
+  filter: brightness(0) saturate(100%)
+          invert(37%) sepia(18%)
+          saturate(1020%) hue-rotate(145deg)
+          brightness(95%) contrast(90%);
+}
+
+.black-icon {
+  filter: brightness(0) saturate(100%);
+}
