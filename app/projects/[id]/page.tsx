@@ -124,7 +124,7 @@ export default async function ProjectPage({ params }: PageProps) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 ">
           
-          <div className="relative card shadow-sm h-auto overflow-hidden md:overflow-visible">
+          <div className="relative card shadow-sm h-auto overflow-hidden lg:overflow-visible">
             <div className="relative h-[220px] md:h-[280px] lg:h-[320px] overflow-visible">
               <div className="absolute inset-0 -left-[0%] bottom-8 w-[150%] rounded-[30px] overflow-hidden">
                 <Image
@@ -143,7 +143,7 @@ export default async function ProjectPage({ params }: PageProps) {
             </div>
           </div>
 
-         <div className="relative card bg-[rgb(var(--color-primary))] shadow-sm overflow-hidden md:overflow-visible mt-16 h-auto">
+         <div className="relative card bg-[rgb(var(--color-primary))] shadow-sm overflow-hidden lg:overflow-visible mt-16 h-auto">
           <div className="px-4 ">
               <h2 className="text-[20px] md:text-[24px] text-[rgb(var(--color-surface))] font-semibold py-4">
                 Maqtov
