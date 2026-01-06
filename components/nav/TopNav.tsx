@@ -50,7 +50,7 @@ export default function TopNav() {
     <>
 
       <header
-        className={`fixed left-0 right-0 z-40 transition-all duration-300 ease-in
+        className={`fixed left-0 right-0 z-100 transition-all duration-300 ease-out
           ${scrolled ? 'top-3 px-4' : 'top-0'}
         `}
       >

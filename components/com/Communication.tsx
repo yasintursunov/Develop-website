@@ -10,15 +10,15 @@ function Communication() {
   const router = useRouter();
 
   return (
-    <div className="fixed right-4 bottom-6 z-50">
+    <div className="fixed right-4 bottom-6 z-100 transition delay-150 duration-300 ease-in-out">
       <div className="flex flex-col gap-3 items-end">
-
+      
         <div className="">
           {chatOpen ? (
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 ">
                 <button
                   onClick={() => setChatOpen(false)}
-                  className="p-1 rounded-full transition-transform duration-200 ease-out hover:scale-105 hover:-translate-y-1"
+                  className="p-1 rounded-full transition-transform duration-200 ease-out hover:scale-105 hover:-translate-y-1 bg-white/30 backdrop-blur-sm "
                   aria-label="close chat"
                 >
                     <Image
@@ -32,7 +32,7 @@ function Communication() {
 
                 <button
                   onClick={() => router.push('https://www.instagram.com')}
-                  className="p-1 rounded-full transition-transform duration-200 ease-out hover:scale-105 hover:-translate-y-1"
+                  className="p-1 rounded-full transition-transform duration-200 ease-out hover:scale-105 hover:-translate-y-1 bg-white/30 backdrop-blur-sm"
                 >
                     <Image
                       src="/instagram-act.svg"
@@ -45,7 +45,7 @@ function Communication() {
 
                 <button
                   onClick={() => router.push('https://www.telegram.com')}
-                  className="p-1 rounded-full transition-transform duration-200 ease-out hover:scale-105 hover:-translate-y-1"
+                  className="p-1 rounded-full transition-transform duration-200 ease-out hover:scale-105 hover:-translate-y-1 bg-white/30 backdrop-blur-sm"
                 >
                     <Image
                       src="/telegram-act.svg"
@@ -58,7 +58,7 @@ function Communication() {
 
                 <button
                   onClick={() => router.push('https://www.facebook.com')}
-                  className="p-1 rounded-full transition-transform duration-200 ease-out hover:scale-105 hover:-translate-y-1"
+                  className="p-1 rounded-full transition-transform duration-200 ease-out hover:scale-105 hover:-translate-y-1 bg-white/30 backdrop-blur-sm"
                 >
                     <Image
                       src="/facebook-act.svg"
@@ -71,7 +71,7 @@ function Communication() {
 
                 <button
                   onClick={() => router.push('https://www.youtube.com/')}
-                  className="p-1 rounded-full transition-transform duration-200 ease-out hover:scale-105 hover:-translate-y-1"
+                  className="p-1 rounded-full transition-transform duration-200 ease-out hover:scale-105 hover:-translate-y-1 bg-white/30 backdrop-blur-sm"
                 >
                     <Image
                       src="/youtube-act.svg"
@@ -90,7 +90,7 @@ function Communication() {
               className="p-0 rounded-full focus:outline-none transition-transform duration-200 ease-out hover:scale-105 hover:-translate-y-1"
             >
               <Image
-                src="/com-chat.svg"
+                src="/com-chat-2.svg"
                 alt="Chat"
                 width={64}
                 height={64}
@@ -108,7 +108,7 @@ function Communication() {
             className="p-0 rounded-full focus:outline-none transition-transform duration-200 ease-out hover:scale-105 hover:-translate-y-1"
           >
             <Image
-              src="/com-phone.svg"
+              src="/com-phone-2.svg"
               alt="Phone"
               width={64}
               height={64}
