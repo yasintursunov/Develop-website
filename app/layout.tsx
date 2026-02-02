@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sabum",
-  description: "Sabum development.",
+  title: "Develop - website",
+  description: "Web development.",
 };
 
 const poppins = Poppins({

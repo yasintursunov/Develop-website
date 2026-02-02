@@ -50,7 +50,7 @@ export default function TopNav() {
     <>
 
       <header
-        className={`fixed left-0 right-0 z-100 transition-all duration-300 ease-out
+        className={`fixed left-0 right-0 z-100 transition-all duration-300 ease-out text-[rgb(var(--color-primary))]
           ${scrolled ? 'top-3 px-4' : 'top-0'}
         `}
       >
@@ -62,11 +62,11 @@ export default function TopNav() {
             `}
         >
           <div className="flex items-center h-[var(--nav-height-desktop)] px-4">
-            <Link href="/" className="text-[20px] font-semibold text-black">
+            <Link href="/" className="text-[20px] font-semibold">
               Logo
             </Link>
 
-            <nav className="ml-auto hidden lg:flex items-center gap-6 text-[rgb(var(--color-primary))]">
+            <nav className="ml-auto hidden lg:flex items-center gap-6 ">
               <Link href="/about">О Компании</Link>
               <Link href="/projects">Проекты</Link>
               <Link href="/news">Новости</Link>
@@ -88,7 +88,7 @@ export default function TopNav() {
         {open && (
           <div className="fixed inset-0 z-50 lg:hidden">
             <div className="absolute inset-0 bg-black/40" onClick={() => setOpen(false)} />
-            <div className="relative h-full w-full bg-white text-[rgb(var(--color-primary))]">
+            <div className="relative h-full w-full bg-white">
               <div className="flex justify-end p-4">
                 <button
                   aria-label="close menu"
@@ -114,7 +114,7 @@ export default function TopNav() {
                 </Link>
 
                 <div className="flex items-center mt-10 gap-4">
-                  <p className="text-[16px] text-black">+998 99 888 77 66</p>
+                  <p className="text-[16px]">+998 99 888 77 66</p>
                   <Image src="/Phone.svg" alt="phone icon" width={30} height={30} />
                 </div>
 

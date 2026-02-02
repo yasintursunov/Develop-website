@@ -37,7 +37,7 @@ export default function BottomNav() {
           <div className="flex flex-col gap-6">
             <div className="w-full h-55 bg-white overflow-hidden">
               <iframe
-                src="https://yandex.ru/map-widget/v1/?ll=70.940103%2C40.519284&z=17&l=map&pt=70.938619,40.519259,pm2rdm"
+                src="https://yandex.ru/map-widget/v1/"
                 width="100%"
                 height="100%"
                 className="border-0"
@@ -94,7 +94,7 @@ export default function BottomNav() {
 
         <div className="relative z-10 max-w-content mx-auto mt-2">
         <div className="flex items-center justify-between text-[8px] lg:text-[12px] text-[rgb(var(--color-gray))] opacity-60">
-            <span>© 2025 Sabum. Все права защищены.</span>
+            <span>© 2025 Yasin Tursunov. Design From 0 to Website.</span>
             <span>Design and Creator Yasin Tursunov</span>
         </div>
         </div>

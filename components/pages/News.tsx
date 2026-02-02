@@ -81,7 +81,7 @@ export default function NewsSlider({ items = [], autoplay = true, interval = 400
             if (offset > len / 2) offset -= len;
             if (offset < -len / 2) offset += len;
             const abs = Math.abs(offset);
-            const scale = offset === 0 ? 1 : Math.max(0.8, 1 - 0.12 * abs);
+            const scale = offset === 0 ? 1 : Math.max(0.1, 1 - 0.12 * abs);
             const translateX = offset * 40;
             const zIndex = 50 - abs;
 
@@ -94,8 +94,8 @@ export default function NewsSlider({ items = [], autoplay = true, interval = 400
                   zIndex,
                   width: "70%",
                   maxWidth: 780,
-                  height: "85%",
-                  boxShadow: "0 10px 30px rgba(0,0,0,0.12)",
+                  height: "85%"
+                  
                 }}
               >
                 <Link href={`/news/${slide.newsId}`} className="relative block w-full h-full">

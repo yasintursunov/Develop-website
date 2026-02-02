@@ -154,7 +154,7 @@ export default async function ProjectPage({ params }: PageProps) {
           </div>
           <div className="absolute bottom-0 -left-[48%] w-[150%] h-[270px] rounded-[30px] overflow-hidden  z-10">
             <Image
-              src={project.images[0]}
+              src={project.images[1]}
               alt={project.title}
               fill
               className="object-cover object-bottom"

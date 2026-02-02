@@ -42,7 +42,7 @@ export default async function NewsPage({ params }: PageProps) {
 
       <div className="relative max-w-[1000px] h-[420px] mb-6 mt-6">
         <Image
-          src={news.images[0]}
+          src={news.images[1]}
           alt={news.title}
           fill
           className="object-cover rounded-[16px]"

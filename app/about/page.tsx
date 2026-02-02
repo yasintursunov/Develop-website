@@ -14,7 +14,7 @@ function Page() {
         <div className="w-full md:w-1/3">
           <div className="relative w-full h-[220px] md:h-[300px] rounded-[20px] overflow-hidden shadow-sm">
             <Image
-              src="/1.jpg"
+              src="/logo.jpg"
               alt="building"
               fill
               className="object-cover"

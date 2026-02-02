@@ -3,9 +3,9 @@ import { Project } from "@/types/project";
 export const PROJECTS: Project[] = [
   {
     id: 1,
-    title: "Qo'qonim",
-    image: "/hero-bg.png",
-    images: ["/1.jpg", "/images1.jpg"],
+    title: "Dream Home",
+    image: "/2.jpg",
+    images: ["/2.jpg", "/qwert.jpg"],
     price: "2000$",
     floor: "23",
     rooms: "122",
@@ -17,9 +17,9 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 2,
-    title: "asd",
-    image: "/globe.svg",    
-    images: ["/1.jpg", "/images1.jpg"],
+    title: "Sunset Villas",
+    image: "/3.jpg",    
+    images: ["/3.jpg", "/3room.jpg"],
     price: "3000$",
     floor: "5",
     rooms: "3",
@@ -31,9 +31,9 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 3,
-    title: "Qo'qonim",
-    image: "/hero-bg.png",
-    images: ["/1.jpg", "/images1.jpg"],
+    title: "Black Home",
+    image: "/4.jpg",
+    images: ["/4.jpg", "/4room.jpg"],
     price: "2000$",
     floor: "23",
     rooms: "122",
