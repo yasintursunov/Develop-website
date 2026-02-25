@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { News } from "@/types/news";
+import TextTranslate from "../animations/TextTranslate";
 
 interface Props {
   items?: News[];
@@ -69,10 +70,12 @@ export default function NewsSlider({ items = [], autoplay = true, interval = 400
   };
 
   return (
-    <div className="flex flex-col items-center overflow-x-hidden">
-      <div className="w-full text-[rgb(var(--color-primary))] mb-4 md:mb-8 mt-8 md:mt-16 px-4 text-2xl md:text-3xl lg:text-4xl font-semibold md:px-8 lg:px-16 text-left">
-        Новости
-      </div>
+    <div className="flex flex-col items-center overflow-x-hidden ">
+      <TextTranslate durationIn={1} y="100%" start="top 100%" >
+        <div className="w-full text-[rgb(var(--color-primary))] mb-4 md:mb-8 mt-8 md:mt-16 px-4 text-2xl md:text-3xl lg:text-4xl font-semibold md:px-8 lg:px-16 text-left">
+          NEWS
+        </div>
+      </TextTranslate>
 
       <div className="relative w-full max-w-[1600px] h-[360px] md:h-[420px] flex items-center justify-center overflow-hidden">
         <div className="relative w-full h-full">
@@ -122,7 +125,7 @@ export default function NewsSlider({ items = [], autoplay = true, interval = 400
 
         <div className="mt-4 flex items-center justify-center gap-4 mb-8">
           <Link href={`/news/${slides[active].newsId}`} className="inline-flex items-center gap-2 ">
-            Читать полностью
+            Learn more 
             <Image src="/go.svg" alt="" width={30} height={30} />
           </Link>
         </div>

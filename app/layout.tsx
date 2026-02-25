@@ -4,21 +4,7 @@ import "./globals.css";
 import TopNav from "@/components/nav/TopNav";
 import BottomNav from "@/components/nav/BottomNav";
 import Communication from "@/components/com/Communication";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata: Metadata = {
-  title: "Develop - website",
-  description: "Web development.",
-};
+import { LoaderProvider } from '@/context/LoaderProvider';
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -26,6 +12,11 @@ const poppins = Poppins({
   variable: "--font-poppins",
   display: "swap",
 });
+
+export const metadata: Metadata = {
+  title: "Develop - website",
+  description: "Web development.",
+};
 
 export default function RootLayout({
   children,
@@ -35,13 +26,16 @@ export default function RootLayout({
   return (
     <html lang="ru" className={poppins.variable}>
       <body className="bg-[rgb(var(--color-background))] font-poppins">
-        <a href="#content" className="skip-link ">Перейти к содержимому</a>
-        <TopNav />
-        <Communication/>
-        <main id="content" className="min-h-screen max-w-content mx-auto">
-          {children}
-        </main>
-        <BottomNav/>
+        {/* LoaderProvider her şeyi sarmalıyor */}
+        <LoaderProvider>
+          <a href="#content" className="skip-link">Перейти к содержимому</a>
+          <TopNav />
+          <Communication />
+          <main id="content" className="min-h-screen max-w-content mx-auto">
+            {children}
+          </main>
+          <BottomNav />
+        </LoaderProvider>
       </body>
     </html>
   );

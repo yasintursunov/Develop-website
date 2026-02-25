@@ -119,7 +119,7 @@ function Communication() {
           {phoneOpen && (
             <div className="absolute right-full mr-3 bottom-1/2 translate-y-1/2 bg-[rgb(var(--color-surface))] border border-[rgb(var(--color-primary))]
                 rounded-2xl px-4 py-2 text-sm text-[rgb(var(--color-primary))] shadow-xl whitespace-nowrap">
-              +999 88 777 66 55
+              +1 234 567 890
             </div>
           )}
         </div>

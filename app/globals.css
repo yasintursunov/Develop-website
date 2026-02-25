@@ -84,7 +84,29 @@
     );
   }
 
-  /* Коррекция большого текста Sabum на мобилке */
+
+  @keyframes progress-realistic {
+    0% { width: 0%; }
+    15% { width: 30%; } 
+    45% { width: 55%; } 
+    75% { width: 85%; } 
+    100% { width: 100%; } 
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  .animate-progress-realistic {
+    animation: progress-realistic 3s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 1.5s infinite;
+  }
+
+  
   .hero-title {
     right: 8px !important;
     font-size: clamp(64px, 22vw, 220px) !important;

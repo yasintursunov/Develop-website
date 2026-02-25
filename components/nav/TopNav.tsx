@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
+import CardTranslate from '../animations/CardTranslate';
+import TextTranslate from '../animations/TextTranslate';
 
 const SCROLL_THRESHOLD_PERCENT = 5;
 
@@ -63,16 +65,16 @@ export default function TopNav() {
         >
           <div className="flex items-center h-[var(--nav-height-desktop)] px-4">
             <Link href="/" className="text-[20px] font-semibold">
-              Logo
+              D.D.A
             </Link>
 
             <nav className="ml-auto hidden lg:flex items-center gap-6 ">
-              <Link href="/about">О Компании</Link>
-              <Link href="/projects">Проекты</Link>
-              <Link href="/news">Новости</Link>
+              <Link href="/about">About Us</Link>
+              <Link href="/projects">Projects</Link>
+              <Link href="/news">News</Link>
               <span className="h-5 w-px bg-[rgb(var(--color-border))]" />
               {/* Контакты — ведут в bottom nav */}
-              <Link href="/#contacts" onClick={handleContactsClick}>Контакты</Link>
+              <Link href="/#contacts" onClick={handleContactsClick}>Contact</Link>
             </nav>
 
             <button
@@ -97,11 +99,20 @@ export default function TopNav() {
                   ✕
                 </button>
               </div>
-
-              <nav className="flex flex-col items-center justify-center gap-8 text-xl font-medium">
-                <Link onClick={() => setOpen(false)} href="/about">О Компании</Link>
-                <Link onClick={() => setOpen(false)} href="/projects">Проекты</Link>
-                <Link onClick={() => setOpen(false)} href="/news">Новости</Link>
+              
+             <nav className="flex flex-col items-center justify-center gap-8 text-xl font-medium">
+              
+                <Link onClick={() => setOpen(false)} className="hover:scale-110 duration-300" href="/about">
+                  <TextTranslate y="100%" durationIn={1} delay={0.1}>About Us</TextTranslate>
+                </Link>
+                
+                <Link onClick={() => setOpen(false)} className="hover:scale-110 duration-300" href="/projects">
+                  <TextTranslate y="100%"durationIn={1} delay={0.2}>Projects</TextTranslate>
+                </Link>
+                
+                <Link onClick={() => setOpen(false)} className="hover:scale-110 duration-300" href="/news">
+                  <TextTranslate y="100%"durationIn={1} delay={0.3}>News</TextTranslate>
+                </Link>
 
                 <Link
                   href="/#contacts"
@@ -109,53 +120,48 @@ export default function TopNav() {
                     setOpen(false);
                     handleContactsClick(e);
                   }}
+                  className="hover:scale-110 duration-300"
                 >
-                  Контакты
+                  <TextTranslate y="100%"durationIn={1} delay={0.4}>Contact</TextTranslate>
                 </Link>
 
-                <div className="flex items-center mt-10 gap-4">
-                  <p className="text-[16px]">+998 99 888 77 66</p>
-                  <Image src="/Phone.svg" alt="phone icon" width={30} height={30} />
+                <div className="flex items-center justify-center mt-10 gap-4 flex-nowrap w-full">
+                  <div className="flex-shrink-0">
+                    <TextTranslate y="100%"durationIn={1} delay={0.5}>
+                      <p className="text-[16px] whitespace-nowrap">+1 234 567 890</p>
+                    </TextTranslate>
+                  </div>
+                  <div className="flex-shrink-0">
+                    <CardTranslate y="100%"durationIn={1} delay={0.6}>
+                      <Image src="/Phone.svg" alt="phone icon" width={30} height={30} className="block" />
+                    </CardTranslate>
+                  </div>
                 </div>
 
                 <div className="flex items-center space-x-2 fixed bottom-0 mb-8">
-                  <button onClick={() => router.push('https://www.instagram.com')}>
-                    <Image
-                      src="/instagram-act.svg"
-                      alt="Instagram"
-                      width={40}
-                      height={40}
-                      className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10"
-                    />
-                  </button>
-                  <button onClick={() => router.push('https://www.telegram.com')}>
-                    <Image
-                      src="/telegram-act.svg"
-                      alt="Telegram"
-                      width={40}
-                      height={40}
-                      className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10"
-                    />
-                  </button>
-                  <button onClick={() => router.push('https://www.facebook.com')}>
-                    <Image
-                      src="/facebook-act.svg"
-                      alt="Facebook"
-                      width={40}
-                      height={40}
-                      className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10"
-                    />
-                  </button>
+                  <CardTranslate y="100%"durationIn={1} delay={0.6}>
+                    <button onClick={() => router.push('https://www.instagram.com')} className="hover:scale-110 duration-300">
+                      <Image src="/instagram-act.svg" alt="Instagram" width={40} height={40} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10" />
+                    </button>
+                  </CardTranslate>
 
-                  <button onClick={() => router.push('https://www.youtube.com/')}>
-                    <Image
-                      src="/youtube-act.svg"
-                      alt="YouTube"
-                      width={40}
-                      height={40}
-                      className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10"
-                    />
-                  </button>
+                  <CardTranslate y="100%"durationIn={1} delay={0.7}>
+                    <button onClick={() => router.push('https://www.telegram.com')} className="hover:scale-110 duration-300">
+                      <Image src="/telegram-act.svg" alt="Telegram" width={40} height={40} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10" />
+                    </button>
+                  </CardTranslate>
+
+                  <CardTranslate y="100%"durationIn={1} delay={0.8}>
+                    <button onClick={() => router.push('https://www.facebook.com')} className="hover:scale-110 duration-300">
+                      <Image src="/facebook-act.svg" alt="Facebook" width={40} height={40} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10" />
+                    </button>
+                  </CardTranslate>
+
+                  <CardTranslate y="100%"durationIn={1} delay={0.9}>
+                    <button onClick={() => router.push('https://www.youtube.com/')} className="hover:scale-110 duration-300">
+                      <Image src="/youtube-act.svg" alt="YouTube" width={40} height={40} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10" />
+                    </button>
+                  </CardTranslate>
                 </div>
               </nav>
             </div>
