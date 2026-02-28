@@ -14,11 +14,11 @@ function Projects() {
 
   return (
     <div className="w-full">
-      <TextTranslate durationIn={1} y="100%" start="top 100%" >
+      <TranslateInOut durationIn={1} y="100%" start="top 100%" >
         <div className="text-[rgb(var(--color-primary))] mb-4 md:mb-8 mt-8 md:mt-16 px-4 text-2xl md:text-3xl lg:text-4xl font-semibold md:px-8 lg:px-16">
           OUR PROJECTS
         </div>
-      </TextTranslate>
+      </TranslateInOut>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-8 lg:px-16 mb-8 max-w-[1490px]">
         {project.map((item, index) => (
